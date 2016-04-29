@@ -21,12 +21,12 @@ class StudentTest < ActiveSupport::TestCase
     rachel.students.create(first_name: "Ziba",   last_name: "Ander", age: "34", current_score: "90")
     nate.students.create(first_name: "Spooky",   last_name: "Ander", age: "31", current_score: "30")
 
-      students = Student.order(:current_score).limit(5)
-      assert_equal 'John',   students[0].first_name
-      assert_equal 'Spooky', students[1].first_name
-      assert_equal 'Chad',   students[2].first_name
-      assert_equal 'Edwin',  students[3].first_name
-      assert_equal 'Peyton', students[4].first_name
+    students = Student.order(:current_score).limit(5)
+    assert_equal 'John',   students[0].first_name
+    assert_equal 'Spooky', students[1].first_name
+    assert_equal 'Chad',   students[2].first_name
+    assert_equal 'Edwin',  students[3].first_name
+    assert_equal 'Peyton', students[4].first_name
 
   end
 

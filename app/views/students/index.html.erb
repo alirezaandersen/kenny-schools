@@ -4,9 +4,8 @@
   <ul>
     <% @students.each do |student| %>
     <li>
-      Score: <%= student.current_score %>%,
-      Student name: <%= student.first_name %> <%= student.last_name %> :
-      Teacher name: <%= student.teacher.first_name %> <%= student.teacher.last_name %>
+      <%= student.first_name %> <%= student.last_name %> :
+      <%= student.teacher.first_name %> <%= student.teacher.last_name %>
     </li>
     <% end %>
   </ul>

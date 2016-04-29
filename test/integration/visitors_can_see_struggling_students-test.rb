@@ -15,22 +15,22 @@ class VistorsCanSeeStrugglingStudentsTest < ActionDispatch::IntegrationTest
     derek = rachel.students.create(first_name: "Derek", last_name: "Butle", age: "36", current_score: "65")
     amy = rachel.students.create(first_name: "Amy", last_name: "Acc", age: "36", current_score: "80")
     ziba = rachel.students.create(first_name: "Ziba", last_name: "Ander", age: "36", current_score: "90")
-    spooky = nate.students.create(first_name: "Spooky", last_name: "Ander", age: "36", current_score: "70")
+    spooky = nate.students.create(first_name: "Spooky", last_name: "Ander", age: "36", current_score: "30")
 
     visit '/students'
 
     within('.struggling') do
       # save_and_open_page
-      assert page.has_content? "Score: 20%, Student name: John Shine : Teacher name: Rachel Warbelow"
-      assert page.has_content? "Score: 40%, Student name: Chad Army : Teacher name: Rachel Warbelow"
-      assert page.has_content? "Score: 45%, Student name: Edwin Socks : Teacher name: Rachel Warbelow"
-      assert page.has_content? "Score: 55%, Student name: Peyton Butle : Teacher name: Rachel Warbelow"
-      assert page.has_content? "Score: 65%, Student name: Derek Butle : Teacher name: Rachel Warbelow"
+      assert page.has_content? "John Shine : Rachel Warbelow"
+      assert page.has_content? "Chad Army : Rachel Warbelow"
+      assert page.has_content? "Edwin Socks : Rachel Warbelow"
+      assert page.has_content? "Peyton Butle : Rachel Warbelow"
+      assert page.has_content? "Spooky Ander : Nate Allen"
     end
 
-      refute page.has_content? "Score: 80%, Student name: Amy Acc, : Teacher Name: Rachel Warbelow"
-      refute page.has_content? "Score: 90%, Student name: Ziba Ander, : Teacher Name: Rachel Warbelow"
-      refute page.has_content? "Score: 70%, Student name: Spooky Ander, : Teacher Name: Nate Allen"
+      refute page.has_content? "Amy Acc, : Rachel Warbelow"
+      refute page.has_content? "Ziba Ander, : Rachel Warbelow"
+      refute page.has_content? "Derek Butle, : Rachel Warbelow"
   end
 
 end

@@ -3,14 +3,14 @@
 <div>
   <ul>
     <% @teachers.each do |teacher| %>
-     <div id="<%= teacher.last_name %>">
-    <li> Teacher: <%= teacher.first_name %> <%= teacher.last_name %></li>
+    <div id="<%= teacher.last_name %>">
+      <li> Teacher: <%= teacher.first_name %> <%= teacher.last_name %></li>
 
-    <% teacher.students.each do |student| %>
+      <% teacher.students.each do |student| %>
       <span>Student name: <%= student.first_name %> <%= student.last_name %>, Age: <%= student.age %></span><br>
-
-    <% end %>
-    <br>
-  <% end %>
-</ul>
+      <% end %>
+      <br>
+      <% end %>
+    </ul>
+  </div>
 </div>

@@ -1,8 +1,8 @@
 class StudentsController < ApplicationController
 
   def index
-
-  end 
+    @students = Student.order(:current_score).limit(5)
+  end
 
 
 

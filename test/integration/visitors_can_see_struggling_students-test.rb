@@ -17,7 +17,7 @@ class VistorsCanSeeStrugglingStudentsTest < ActionDispatch::IntegrationTest
     ziba = rachel.students.create(first_name: "Ziba", last_name: "Ander", age: "36", current_score: "90")
     spooky = nate.students.create(first_name: "Spooky", last_name: "Ander", age: "36", current_score: "30")
 
-    visit '/students'
+    visit students_path
 
     within('.struggling') do
       # save_and_open_page

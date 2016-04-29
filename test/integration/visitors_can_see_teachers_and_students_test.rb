@@ -15,7 +15,7 @@ class VisitorsSeesAllTeachersAndStudentsTest < ActionDispatch::IntegrationTest
     ali = nate.students.create(first_name: "Ali", last_name: "Andersen", age: "35")
     jeneve = nate.students.create(first_name: "Jeneve",last_name: "Parish", age: "38")
 
-    visit '/teachers'
+    visit teachers_path
 
 
       within("##{rachel.last_name}") do

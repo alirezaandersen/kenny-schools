@@ -1,1 +1,16 @@
 <h1>Welcome to Kenny's School</h1>
+
+<div>
+  <ul>
+    <% @teachers.each do |teacher| %>
+     <div id="<%= teacher.last_name %>">
+    <li> Teacher: <%= teacher.first_name %> <%= teacher.last_name %></li>
+
+    <% teacher.students.each do |student| %>
+      <span>Student name: <%= student.first_name %> <%= student.last_name %>, Age: <%= student.age %></span><br>
+
+    <% end %>
+    <br>
+  <% end %>
+</ul>
+</div>

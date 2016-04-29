@@ -17,16 +17,16 @@ class VisitorsSeesAllTeachersAndStudentsTest < ActionDispatch::IntegrationTest
 
     visit '/teachers'
 
-    within("ul li:nth-child(1)") do
-      assert page.has_content? "Rachel Warbelow"
-      assert page.has_content? "Hedy Woo, 30"
-      assert page.has_content? "Jon Liss, 21"
-    end
 
-    within("ul li:nth-child(2)") do
+      within("##{rachel.last_name}") do
+      assert page.has_content? "Rachel Warbelow"
+      assert page.has_content? "Student name: Hedy Woo, Age: 30"
+      assert page.has_content? "Student name: Jon Liss, Age: 21"
+    end
+      within("##{nate.last_name}") do
       assert page.has_content? "Nate Allen"
-      assert page.has_content? "Ali Andersn, 35"
-      assert page.has_content? "Jeneve Parish, 38"
+      assert page.has_content? "Student name: Ali Andersen, Age: 35"
+      assert page.has_content? "Student name: Jeneve Parish, Age: 38"
     end
 
   end
